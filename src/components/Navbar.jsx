@@ -6,7 +6,11 @@ import Search from "./Search";
 function Navbar() {
   return (
     <nav className="flex navbar">
-      <div className="nav__left logo sonsie-font">EasyBuy</div>
+      <div className="nav__left logo sonsie-font">
+        <NavLink to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          EasyBuy
+        </NavLink>
+      </div>
       <div className="nav__right nav__links flex">
         <Search />
         <div className="links flex">
