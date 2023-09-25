@@ -44,7 +44,9 @@ function Home() {
       for (let d of data) {
         products_[d[0]] = d[1];
       }
-      dispatch(updateProducts(products_));
+      setInterval(() => {
+        dispatch(updateProducts(products_));
+      }, 1500);
     });
   }, [categories]);
 
@@ -54,9 +56,15 @@ function Home() {
 
   if (!categories || !products)
     return (
-      <h1 align="center" className="sofia-font">
-        Loading....
-      </h1>
+      <div className="loading flex flex-col">
+        <img
+          src="https://media.tenor.com/VVrTk5ABuiYAAAAC/mr-bean-mr.gif"
+          alt="waiting bean..."
+        />
+        <h1 align="center" className="sofia-font">
+          Loading....
+        </h1>
+      </div>
     );
 
   return (

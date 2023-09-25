@@ -85,6 +85,18 @@
     margin-top: 1rem;
 }
 
+.loading {
+    padding: 3rem 0;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.loading img {
+    border-radius: 15px;
+}
+
 @media screen and (max-width: 1200px) {
     .tiles {
         grid-template-columns: repeat(1, 1fr);
