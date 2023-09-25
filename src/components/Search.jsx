@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 
 function Search() {
   const [value, setValue] = useState("");
-  const handleClick = () => {};
 
   return (
     <div className="search__container flex">
@@ -15,11 +14,7 @@ function Search() {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <NavLink
-        to={`/search/?query=${value}`}
-        className="link btn"
-        onClick={handleClick}
-      >
+      <NavLink to={`/search/?query=${value}`} className="link btn">
         <i className="fa-solid fa-magnifying-glass"></i>
       </NavLink>
     </div>

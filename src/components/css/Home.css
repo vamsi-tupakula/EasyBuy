@@ -86,14 +86,14 @@
 }
 
 .loading {
-    padding: 3rem 0;
-    width: 100%;
-    max-width: 500px;
+    padding: 3rem 1rem;
     margin: 0 auto;
     gap: 2rem;
 }
 
 .loading img {
+    width: 100%;
+    max-width: 500px;
     border-radius: 15px;
 }
 
