@@ -1,0 +1,19 @@
+.search__input {
+    outline: none;
+    padding: 7.5px 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 3px;
+    border: none;
+}
+
+/* @media screen and (max-width: 760px) {
+    .search__input {
+        font-size: .8rem;
+    }
+    .search__container {
+        position: absolute;
+        right: 1rem;
+        top: 20px;
+    }
+} */

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Sonsie+One&display=swap'); /* Sonsie font */
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap'); /* Sofia font */
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sonsie-font {
+    font-family: 'Sonsie One', cursive;
+}
+
+.sofia-font {
+    font-family: 'Sofia', cursive;
+}
+
+.btn {
+    border: none;
+    color: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: scale .3s ease-in-out;
+    box-shadow: 0 0 3px #797979;
+    cursor: pointer;
+}
+
+.btn:hover {
+    outline: 2px solid rgb(255, 174, 0);
+}
+
+.navlink {
+    text-decoration: none;
+    color: inherit;    
+}
+
+.heading {
+    font-size: 2.5rem;
+}
+
+@media screen and (max-width: 900px) {
+    .heading {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .heading {
+        font-size: 1.4rem;
+    }
+}
