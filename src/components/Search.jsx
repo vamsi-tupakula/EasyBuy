@@ -13,13 +13,11 @@ function Search() {
 
   return (
     <div className="search__container flex">
-      {search && (
-        <input
-          type="text"
-          className="search__input"
-          placeholder="Search for products..."
-        />
-      )}
+      <input
+        type="text"
+        className="search__input"
+        placeholder="Search for products..."
+      />
       <button to="/search" className="link btn" onClick={handleClick}>
         {search ? (
           <i className="fa-regular fa-circle-check"></i>
