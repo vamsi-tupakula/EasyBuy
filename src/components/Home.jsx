@@ -46,7 +46,7 @@ function Home() {
       }
       setInterval(() => {
         dispatch(updateProducts(products_));
-      }, 1500);
+      }, 2000);
     });
   }, [categories]);
 
@@ -57,10 +57,7 @@ function Home() {
   if (!categories || !products)
     return (
       <div className="loading flex flex-col">
-        <img
-          src="https://media.tenor.com/VVrTk5ABuiYAAAAC/mr-bean-mr.gif"
-          alt="waiting bean..."
-        />
+        <img src="src\assets\mr-bean.gif" alt="waiting bean..." />
         <h1 align="center" className="sofia-font">
           Loading....
         </h1>
