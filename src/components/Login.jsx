@@ -1,0 +1,87 @@
+import React, { useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../../app/Firebase";
+import "./css/Login.css";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { updateUserDetails } from "../features/productsSlice";
+
+function Login() {
+  const navigate = useNavigate();
+  const userId = useSelector((state) => state.products.userId);
+  const dispatch = useDispatch();
+  const [login, setLogin] = useState(true);
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    if (!login) {
+      createUserWithEmailAndPassword(
+        auth,
+        credentials.email,
+        credentials.password
+      )
+        .then((user) => {
+          alert("Account successfully created! please login to continue....");
+          setLogin((p) => !p);
+        })
+        .catch((err) => alert(err.code));
+    } else {
+      signInWithEmailAndPassword(
+        auth,
+        credentials.email,
+        credentials.password
+      ).then((user) => {
+        localStorage.setItem("userId", user.user.uid);
+        dispatch(updateUserDetails(user.user.uid));
+        navigate("/");
+      });
+    }
+    setCredentials({ email: "", password: "" });
+  };
+
+  return (
+    <div className="form__container flex">
+      <form className="login__form flex flex-col" onSubmit={handleLogin}>
+        <h1>{login ? "LOGIN" : "SIGN UP"}</h1>
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email..."
+          value={credentials.email}
+          onChange={(e) => {
+            setCredentials((state) => ({ ...state, email: e.target.value }));
+          }}
+          autoComplete="off"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter your password..."
+          value={credentials.password}
+          onChange={(e) => {
+            setCredentials((state) => ({ ...state, password: e.target.value }));
+          }}
+          autoComplete="off"
+          required
+        />
+        <button className="btn" type="submit">
+          {login ? "Login" : "Sign Up"}
+        </button>
+        <p>
+          {!login ? "Already " : "Don't "}
+          have an account?{" "}
+          <span className="link" onClick={() => setLogin((prev) => !prev)}>
+            sign {!login ? "in" : "up"}
+          </span>
+        </p>
+      </form>
+    </div>
+  );
+}
+
+export default Login;

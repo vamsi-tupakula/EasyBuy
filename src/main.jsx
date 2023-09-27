@@ -9,6 +9,8 @@ import "./index.css";
 import "./utils.css";
 import SearchPage from "./components/SearchPage.jsx";
 import ProductPage from "./components/ProductPage.jsx";
+import Login from "./components/Login.jsx";
+import Account from "./components/Account.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
@@ -18,6 +20,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route index element={<Home />} />
           <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/account" element={<Account />} />
         </Route>
       </Routes>
     </BrowserRouter>
