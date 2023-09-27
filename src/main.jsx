@@ -11,6 +11,7 @@ import SearchPage from "./components/SearchPage.jsx";
 import ProductPage from "./components/ProductPage.jsx";
 import Login from "./components/Login.jsx";
 import Account from "./components/Account.jsx";
+import Cart from "./components/Cart.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/search" element={<SearchPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/cart" element={<Cart />} />
         </Route>
       </Routes>
     </BrowserRouter>

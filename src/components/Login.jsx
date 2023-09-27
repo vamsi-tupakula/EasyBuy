@@ -3,11 +3,12 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { auth } from "../../app/Firebase";
+import { auth, firestore } from "../../app/Firebase";
 import "./css/Login.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUserDetails } from "../features/productsSlice";
+import { doc, setDoc } from "firebase/firestore";
 
 function Login() {
   const navigate = useNavigate();
@@ -24,8 +25,18 @@ function Login() {
         credentials.email,
         credentials.password
       )
-        .then((user) => {
-          alert("Account successfully created! please login to continue....");
+        .then(async (user) => {
+          console.log(
+            "Account successfully created! please login to continue...."
+          );
+          const uid = user.user.uid;
+
+          await setDoc(doc(firestore, "users", uid), {
+            email: credentials.email,
+            password: credentials.password,
+            cart: [],
+          });
+
           setLogin((p) => !p);
         })
         .catch((err) => alert(err.code));

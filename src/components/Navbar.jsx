@@ -6,7 +6,6 @@ import { updateUserDetails } from "../features/productsSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 function Navbar() {
-  const [loggedIn, setLoggedIn] = useState(false);
   const user = useSelector((state) => state.products.userId);
   const dispatch = useDispatch();
 

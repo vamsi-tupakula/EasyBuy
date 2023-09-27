@@ -50,10 +50,6 @@ function Home() {
     });
   }, [categories]);
 
-  const getRandomCategory = () => {
-    return categories[Math.floor(Math.random() * categories.length)];
-  };
-
   if (!categories || !products)
     return (
       <div className="loading flex flex-col">
@@ -69,22 +65,7 @@ function Home() {
 
   return (
     <div className="home">
-      {/* Section 1 -- Random Products */}
-      <div className="random__prods flex">
-        {[1, 2, 3].map((item) => {
-          let prod = products[getRandomCategory()][item - 1];
-          return (
-            <NavLink
-              to={`/products/${prod.id}`}
-              className="navlink"
-              key={prod.id}
-            >
-              <Card prod={prod} key={item} />
-            </NavLink>
-          );
-        })}
-      </div>
-      {/* Section 2 -- Best of electronics */}
+      {/* Section 1 -- Best of electronics */}
       <div className="heading__container flex">
         <p className="sofia-font heading">Best of Electronics</p>
         <NavLink to="/products/electronics" className="navlink">
@@ -106,7 +87,7 @@ function Home() {
           });
         })}
       </div>
-      {/* Section 3 -- Sample tiles */}
+      {/* Section 2 -- Sample tiles */}
       <div className="tiles">
         {categories.slice(2, 6).map((cat, index) => {
           return (
@@ -131,7 +112,18 @@ function Home() {
           );
         })}
       </div>
-      {/* Section 4 -- different categories */}
+      {/* Section 3 -- different categories */}
+      <div className="categories">
+        {categories.map((cat, index) => {
+          return (
+            <NavLink className="navlink" key={index}>
+              <div className="caty">
+                {cat.charAt(0).toUpperCase() + cat.substring(1)}
+              </div>
+            </NavLink>
+          );
+        })}
+      </div>
     </div>
   );
 }
