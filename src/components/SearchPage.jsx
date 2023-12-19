@@ -12,7 +12,7 @@ function SearchPage() {
   if (!categories || !products)
     return (
       <div className="flex flex-col">
-        <h1 className="sofia-font" align="center">
+        <h1 className="warning" align="center">
           Fetching the data failed please go back and come again...
         </h1>
         <br />
@@ -27,7 +27,9 @@ function SearchPage() {
     products[cat].map((prod_) => {
       if (
         prod_.title.toLowerCase().includes(query) ||
-        prod_.description.toLowerCase().includes(query)
+        prod_.description.toLowerCase().includes(query) ||
+        prod_.category.toLowerCase().includes(query) ||
+        prod_.brand.toLowerCase().includes(query)
       ) {
         new_products.push(prod_);
       }
