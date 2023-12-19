@@ -6,3 +6,8 @@
     margin: 0 auto;
     position: relative;
 }
+
+.product-image {
+    height: 100%;
+    max-width: 100%;
+}
