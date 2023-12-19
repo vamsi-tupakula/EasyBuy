@@ -63,7 +63,7 @@ function Home() {
     <div className="home">
       {/* Section 1 -- Best of electronics */}
       <div className="heading__container flex">
-        <p className="sofia-font heading">Best of Electronics</p>
+        <p className="heading">Best of Electronics</p>
         <NavLink to="/products/electronics" className="navlink">
           <i className="fa-solid fa-arrow-right"></i>
         </NavLink>

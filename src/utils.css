@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Sonsie+One&display=swap'); /* Sonsie font */
-@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap'); /* Sofia font */
+@import url('https://fonts.googleapis.com/css2?family=Sonsie+One&display=swap');
+/* Sonsie font */
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+/* Sofia font */
 
 .flex {
     display: flex;
@@ -39,11 +41,11 @@
 
 .navlink {
     text-decoration: none;
-    color: inherit;    
+    color: inherit;
 }
 
 .heading {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
 }
 
 @media screen and (max-width: 900px) {
