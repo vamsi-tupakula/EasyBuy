@@ -63,10 +63,7 @@ function Home() {
     <div className="home">
       {/* Section 1 -- Best of electronics */}
       <div className="heading__container flex">
-        <p className="heading">Best of Electronics</p>
-        <NavLink to="/products/electronics" className="navlink">
-          <i className="fa-solid fa-arrow-right"></i>
-        </NavLink>
+        <p className="sofia-font heading">Best of Electronics</p>
       </div>
       <div className="electronics flex">
         {electronics.map((item) => {
@@ -112,7 +109,7 @@ function Home() {
       <div className="categories">
         {categories.map((cat, index) => {
           return (
-            <NavLink className="navlink" key={index}>
+            <NavLink to={`/products/cat?type=${cat}`} className="navlink" key={index}>
               <div className="caty">
                 {cat.charAt(0).toUpperCase() + cat.substring(1)}
               </div>

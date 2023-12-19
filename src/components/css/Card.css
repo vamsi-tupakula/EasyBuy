@@ -9,12 +9,12 @@
     box-shadow: 0 0 5px #9e9e9e;
     gap: 15px;
     text-align: center;
-    transition: .2s;
+    transition: .4s;
 }
 
 .card:hover {
     box-shadow: 0 0 5px #483838;
-    outline: 2px solid #071952;
+    outline: 2px solid #07195287;
 }
 
 .card__img {
@@ -22,7 +22,7 @@
     width: 90%;
 }
 
-.card__img .img{
+.card__img .img {
     width: 100%;
     height: 100%;
     border-radius: 15px;
