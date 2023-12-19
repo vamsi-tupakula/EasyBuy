@@ -3,12 +3,13 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAkmxRKwp-FkfeG7Edpz078b2XtbkRgNeU",
-  authDomain: "easybuy-3e7f5.firebaseapp.com",
-  projectId: "easybuy-3e7f5",
-  storageBucket: "easybuy-3e7f5.appspot.com",
-  messagingSenderId: "800210764588",
-  appId: "1:800210764588:web:bb30a96ee609cb93c92289",
+  apiKey: "AIzaSyADDBlW_mK9Tk0YCg1TMUyovG55E6xys5U",
+  authDomain: "easybuy-ca544.firebaseapp.com",
+  projectId: "easybuy-ca544",
+  storageBucket: "easybuy-ca544.appspot.com",
+  messagingSenderId: "410489133570",
+  appId: "1:410489133570:web:bac497a442b9953cea651b",
+  measurementId: "G-B8ZQG4SHG3"
 };
 
 export const app = initializeApp(firebaseConfig);

@@ -26,7 +26,7 @@ function Login() {
         credentials.password
       )
         .then(async (user) => {
-          console.log(
+          alert(
             "Account successfully created! please login to continue...."
           );
           const uid = user.user.uid;
@@ -49,6 +49,8 @@ function Login() {
         localStorage.setItem("userId", user.user.uid);
         dispatch(updateUserDetails(user.user.uid));
         navigate("/");
+      }).catch(err => {
+        alert("Invalid Login Credentials");
       });
     }
     setCredentials({ email: "", password: "" });
@@ -80,7 +82,7 @@ function Login() {
           autoComplete="off"
           required
         />
-        <button className="btn" type="submit">
+        <button className="btn" type="submit" disabled={!credentials.email || !credentials.password}>
           {login ? "Login" : "Sign Up"}
         </button>
         <p>

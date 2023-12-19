@@ -17,19 +17,27 @@
 input {
   width: 80%;
   outline: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: 2px solid green;
-  border-radius: 50px;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  border: 2px solid #071952;
+  border-radius: 10px;
   box-shadow: 0 0 3px #ececec;
 }
 
 .login__form .btn {
-  border-radius: 20px;
+  font-size: 1.2rem;
+  border-radius: 10px;
   padding: 10px 25px;
+  text-transform: uppercase;
 }
 
-.login__form .btn:hover {
+.login__form .btn:disabled {
+  outline: none;
+  color: #6e6e6e;
+  border: 2px solid rgb(0, 25, 65);
+}
+
+.login__form .btn:not(:disabled):hover {
   outline: none;
   background-color: rgb(181, 255, 218);
 }
